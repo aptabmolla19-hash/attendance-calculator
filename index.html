@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>📊 Attendance Percentage Calculator</h1>
+
+        <p>Copy Attendance data from ERP and Paste below:</p>
+
+        <textarea id="attendanceData"
+        placeholder="Paste your attendance data here..."
+        rows="15"></textarea>
+
+        <button onclick="calculateAttendance()">
+            Calculate Attendance
+        </button>
+
+        <div class="result">
+
+            <h2>Result</h2>
+
+            <p>Total Classes:
+                <span id="total">0</span>
+            </p>
+
+            <p>Present:
+                <span id="present">0</span>
+            </p>
+
+            <p>Absent:
+                <span id="absent">0</span>
+            </p>
+
+            <p>Attendance Percentage:
+                <span id="percentage">0%</span>
+            </p>
+
+            <h3 id="status"></h3>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

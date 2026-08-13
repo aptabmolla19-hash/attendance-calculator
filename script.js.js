@@ -363,3 +363,29 @@ function createSubjectTable(subjects) {
 // ==========================================
 
 window.calculateAttendance = calculateAttendance;
+
+const currentPercentage = (present / total) * 100;
+
+let requiredMessage = "";
+
+if (currentPercentage >= 75) {
+    requiredMessage = `
+        <div class="success-message">
+            ✅ You are eligible!<br>
+            Your attendance is ${currentPercentage.toFixed(2)}%.<br>
+            No more classes required to reach 75%.
+        </div>
+    `;
+} else {
+    const classesNeeded = Math.ceil(
+        (0.75 * total - present) / 0.25
+    );
+
+    requiredMessage = `
+        <div class="warning-message">
+            ⚠️ Your attendance is below 75%.<br>
+            You need to attend <b>${classesNeeded}</b> more classes
+            continuously to reach 75%.
+        </div>
+    `;
+}
